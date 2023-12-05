@@ -1,8 +1,9 @@
-﻿using ConsoleApp2;
+﻿using PersonalExceptions;
 
 string path = "";
 string[] nums;
 List<Exception> exceptions = new List<Exception>();
+Logs logSaver = new Logs(); 
 int a = 0;
 int b = 0;
 int c = 0;
@@ -99,6 +100,9 @@ finally
         foreach (var exception in exceptions)
         {
             Console.WriteLine(" - " + exception.GetType());
+            logSaver.LogToTxt(exception);
+            logSaver.LogToXML(exception);
+            logSaver.LogToJSON(exception);
         }
     }
     Console.WriteLine("\nКонец работы программы.");

@@ -1,4 +1,4 @@
-namespace ConsoleApp2;
+namespace PersonalExceptions;
 
 public class DiscriminantIsNullException : Exception
 {
